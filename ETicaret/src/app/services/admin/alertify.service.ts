@@ -11,7 +11,7 @@ export class AlertifyService {
 
 
   // message( message: string, MessageType: MessageType, position: Position , delay: number, dismissOthers: boolean =false)
-  message( message: string, options: AlertifyOptions)
+  message( message: string, options: Partial<AlertifyOptions>)
   {
     alertify.set('notifier','delay', options.delay);
     alertify.set('notifier','position', options.position);

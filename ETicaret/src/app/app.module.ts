@@ -6,6 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UiModule } from './ui/ui.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
+// import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -13,11 +17,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    // BrowserAnimationsModule,
+    // CommonModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    AdminModule, UiModule, BrowserAnimationsModule
+    AdminModule, UiModule, BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    HttpClientModule
+
   ],
-  providers: [],
+  providers: [
+    { provide: "baseUrl", useValue: "https://localhost:7141/api", multi: true }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

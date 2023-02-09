@@ -12,11 +12,11 @@ declare var $: any
 })
 export class AppComponent {
   title = 'ETicaret';
-constructor(private toastrService: CustomToastrService) {
-  toastrService.message("Merhaba", "oktay", {
-  massageType :  ToastrMessageType.Info,
-  positionClass: ToastrPosition.TopCenter
-});
+  constructor(private toastrService: CustomToastrService) {
+    toastrService.message("Merhaba", "oktay", {
+      massageType: ToastrMessageType.Warning,
+      positionClass: ToastrPosition.BottomRight
+    });
 
 
 

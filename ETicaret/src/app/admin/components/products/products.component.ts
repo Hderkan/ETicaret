@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/contracts/product';
+
 import { HttpClientService } from 'src/app/services/common/http-client.service';
 
 @Component({
@@ -12,11 +12,11 @@ export class ProductsComponent implements OnInit {
   constructor(private httpClientService: HttpClientService) { }
 
   ngOnInit(): void {
-    this.httpClientService.get<Product[]>({
-      controller: "Products"
-    }).subscribe(data => {
+    // this.httpClientService.get<create_product[]>({
+    //   controller: "Products"
+    // }).subscribe(data => {
 
-    });
+    // });
 
     // this.httpClientService.post({
     //   controller: "Products"
@@ -51,12 +51,12 @@ export class ProductsComponent implements OnInit {
     //   price: 5
     // }).subscribe();
 
-    this.httpClientService.delete({
-      controller: "Products"
-    },
-      "47f360ff-3be9-4fd3-9ec5-86be98b55988")
+    // this.httpClientService.delete({
+    //   controller: "Products"
+    // },
+    //   "47f360ff-3be9-4fd3-9ec5-86be98b55988")
 
-      .subscribe();
+    //   .subscribe();
   }
 
 }

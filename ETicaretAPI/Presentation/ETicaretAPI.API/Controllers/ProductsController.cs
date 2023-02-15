@@ -30,7 +30,20 @@ namespace ETicaretAPI.API.Controllers
         public async Task<IActionResult> Get()
         {
 
-             return  Ok(_productReadRepository.GetAll());
+             return  Ok(_productReadRepository.GetAll(false).Select(p=> new
+             {
+                 p.Id,
+                 p.Name,
+                 p.Stock,
+                 p.Price,
+                 p.CreatedDate,
+                 p.UpdatedDate
+
+             }
+                
+                
+             
+             ));
 
 
             //Order order = await _orderReadRepository.GetByIdAsync("c6bc93b4-ef15-45f7-a901-a3ecda93b19a");
@@ -43,10 +56,7 @@ namespace ETicaretAPI.API.Controllers
         public async Task<IActionResult> Post(VM_Create_Product model)
         {
 
-            if (ModelState.IsValid)
-            {
-
-            }
+          
 
 
             _productWriteRepository.AddAsync(new Product()

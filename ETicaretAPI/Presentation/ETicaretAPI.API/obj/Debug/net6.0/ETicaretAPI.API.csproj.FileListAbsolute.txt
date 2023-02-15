@@ -40,3 +40,8 @@ C:\Users\Monster\Desktop\ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\D
 C:\Users\Monster\Desktop\ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\Npgsql.dll
 C:\Users\Monster\Desktop\ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\Monster\Desktop\ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Monster\Desktop\ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\Monster\Desktop\ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\Monster\Desktop\ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Monster\Desktop\ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\ETicaretAPI.Infrastructure.dll
+C:\Users\Monster\Desktop\ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\ETicaretAPI.Infrastructure.pdb

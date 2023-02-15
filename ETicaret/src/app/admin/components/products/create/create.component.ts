@@ -22,6 +22,26 @@ export class CreateComponent implements OnInit {
     create_product.stock = parseInt(stock.value);
     create_product.price = parseFloat(price.value);
 
+    if (!name.value) {
+      this.alertify.message("Lütfen ürün adını giriniz", {
+        dismissOther: true,
+        messageType: MessageType.Error,
+        position: Position.TopLeft
+      });
+      return;
+    }
+
+    if (parseInt(stock.value) < 0) {
+      this.alertify.message("Stock bilgisini girin", {
+        dismissOther: true,
+        messageType: MessageType.Error,
+        position: Position.TopLeft
+      });
+      return;
+
+    }
+
+
     this.productService.create(create_product, () => {
 
       this.alertify.message("Ürin basarıyla eklenmiştir", {
@@ -31,6 +51,13 @@ export class CreateComponent implements OnInit {
 
 
       });
+    }, errorMessage => {
+      this.alertify.message(errorMessage,
+        {
+          dismissOther: true,
+          messageType: MessageType.Error,
+          position: Position.TopRight
+        });
     });
   }
 

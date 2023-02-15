@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "EsjIglqrPgcqjqrhjQ8FIuIjMpqiHAsCedgm7NfY42LrN8zUCMsYrUaOCj/CJU2TPdiKorePnS2p8YDQi4diqA==",
+  "dgSpecHash": "TMVXN/56MeYdsREE5GPLP8TuA1WE03/miZChjEP/zSkIFN8toK+C0DRpPX9hAlbCm6z6uXg2aVy7R2cR10Q8Gg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Monster\\Desktop\\ETicaret\\ETicaretAPI\\Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Monster\\.nuget\\packages\\fluentvalidation\\11.5.0\\fluentvalidation.11.5.0.nupkg.sha512",
+    "C:\\Users\\Monster\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\Monster\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.0\\fluentvalidation.dependencyinjectionextensions.11.5.0.nupkg.sha512",
     "C:\\Users\\Monster\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.9\\microsoft.entityframeworkcore.6.0.9.nupkg.sha512",
     "C:\\Users\\Monster\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.9\\microsoft.entityframeworkcore.abstractions.6.0.9.nupkg.sha512",
     "C:\\Users\\Monster\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.9\\microsoft.entityframeworkcore.analyzers.6.0.9.nupkg.sha512",

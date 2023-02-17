@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource, _MatTableDataSource } from '@angular/material/table';
 import { List_Product } from 'src/app/contracts/list_product';
-import { AlertifyOptions, AlertifyService } from 'src/app/services/admin/alertify.service';
+import { AlertifyOptions, AlertifyService, MessageType, Position } from 'src/app/services/admin/alertify.service';
 import { ProductService } from 'src/app/services/common/models/product.service';
 
 @Component({
@@ -21,15 +21,33 @@ export class ListComponent implements OnInit {
   dataSource: MatTableDataSource<List_Product> = null;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  async ngOnInit() {
+  async getProducts() {
 
 
 
-    const allProducts: List_Product[] = await this.productService.read(
+
+    const allProducts: { totalCount: number; products: List_Product[] } = await this.productService.read(this.paginator ? this.paginator.pageIndex : 0, this.paginator ? this.paginator.pageSize : 5
     )
 
-    this.dataSource = new MatTableDataSource<List_Product>(allProducts);
-    this.dataSource.paginator = this.paginator;
+
+    this.dataSource = new MatTableDataSource<List_Product>(allProducts.products);
+    this.paginator.length = allProducts.totalCount;
+
+
+
+  }
+
+  async pageChanged() {
+    await this.getProducts();
+
+  }
+
+
+  async ngOnInit() {
+
+    await this.getProducts();
+
+
   }
 
 }

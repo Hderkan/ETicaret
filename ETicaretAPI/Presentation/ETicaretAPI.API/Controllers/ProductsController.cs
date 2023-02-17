@@ -1,5 +1,6 @@
 ﻿using ETicaretAPI.Application.Abstractions;
 using ETicaretAPI.Application.Repositories;
+using ETicaretAPI.Application.RequestParameters;
 using ETicaretAPI.Application.ViewModels.Products;
 using ETicaretAPI.Domain.Entities;
 using Microsoft.AspNetCore.Http;
@@ -15,35 +16,39 @@ namespace ETicaretAPI.API.Controllers
     {
         readonly private IProductWriteRepository _productWriteRepository;
         readonly private IProductReadRepository _productReadRepository;
-       
+
 
 
         public ProductsController(IProductReadRepository productReadRepository, IProductWriteRepository productWriteRepository, IOrderWriteRepository orderWriteRepository, ICustomerWriteRepository customerWriteRepository, IOrderReadRepository orderReadRepository)
         {
             _productReadRepository = productReadRepository;
             _productWriteRepository = productWriteRepository;
-           
+
         }
 
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery]Pagination paginaiton)
         {
 
-             return  Ok(_productReadRepository.GetAll(false).Select(p=> new
-             {
-                 p.Id,
-                 p.Name,
-                 p.Stock,
-                 p.Price,
-                 p.CreatedDate,
-                 p.UpdatedDate
+            await Task.Delay(1500);
+            var totalCount = _productReadRepository.GetAll(false).Count();
+            var products = _productReadRepository.GetAll(false).Skip(paginaiton.Page * paginaiton.Size).Take(paginaiton.Size).Select(p => new
+            {
+                p.Id,
+                p.Name,
+                p.Stock,
+                p.Price,
+                p.CreatedDate,
+                p.UpdatedDate
 
-             }
-                
-                
-             
-             ));
+            }).ToList();
+                return Ok(new
+                {
+                    totalCount,
+                    products
+                }
+                    );
 
 
             //Order order = await _orderReadRepository.GetByIdAsync("c6bc93b4-ef15-45f7-a901-a3ecda93b19a");

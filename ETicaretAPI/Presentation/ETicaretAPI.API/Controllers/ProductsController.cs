@@ -94,7 +94,8 @@ namespace ETicaretAPI.API.Controllers
         {
             await _productWriteRepository.RemoveAsync(id);
             await _productWriteRepository.SaveAsync();
-            return Ok();
+            return Ok(
+                );
         }
 
 

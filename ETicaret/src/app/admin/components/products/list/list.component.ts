@@ -5,6 +5,8 @@ import { List_Product } from 'src/app/contracts/list_product';
 import { AlertifyOptions, AlertifyService, MessageType, Position } from 'src/app/services/admin/alertify.service';
 import { ProductService } from 'src/app/services/common/models/product.service';
 
+declare var $: any;
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -17,7 +19,7 @@ export class ListComponent implements OnInit {
 
 
 
-  displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate', 'updatedDate'];
+  displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate', 'updatedDate', 'edit', 'delete'];
   dataSource: MatTableDataSource<List_Product> = null;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -36,6 +38,14 @@ export class ListComponent implements OnInit {
 
 
   }
+
+  delete(id, event) {
+    alert(id)
+    const img: HTMLImageElement = event.srcElement;
+    $(img.parentElement.parentElement).fadeOut(2000);
+
+  }
+
 
   async pageChanged() {
     await this.getProducts();
